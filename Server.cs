@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RobotMananager;
 
-public partial class MainWindow {
+public class Server {
+
 
 }
-

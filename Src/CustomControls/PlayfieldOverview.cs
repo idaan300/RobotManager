@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace RobotMananager.CustomControls;
 
-using Windows.Networking;
-
-namespace RobotMananager.CustomControls;
-
-public class PlayfieldOverview : Panel {
+public class PlayfieldOverview : Panel
+{
     //TODO Stuff
     //Entity Class
     //DrawRectRelative
@@ -17,16 +10,20 @@ public class PlayfieldOverview : Panel {
 
 
 
-    protected override void OnPaint(PaintEventArgs e) {
+    protected override void OnPaint(PaintEventArgs e)
+    {
         var g = e.Graphics;
 
-        
-        Point[] points = new Point[4];
 
-        points[0] = new Point(0, 0);
-        points[1] = new Point(0, 100);
-        points[2] = new Point(100, 0);
-        points[3] = new Point(200,100);
+        Point[] points = new Point[4];
+        //TopLeft
+        points[0] = new Point(100, 100);
+        //TopRight
+        points[1] = new Point(200, 100);
+        //BottomLeft
+        points[2] = new Point(200, 200);
+        //BottomRight
+        points[3] = new Point(100, 200);
 
 
         Brush brush = new SolidBrush(Color.DarkGreen);
@@ -34,7 +31,7 @@ public class PlayfieldOverview : Panel {
 
         g.FillPolygon(brush, points);
 
-        TextRenderer.DrawText(g, "Bean", A, new Point(50, 50), Color.DarkRed);
+        TextRenderer.DrawText(g, "Bean", A, new Point(125, 125), Color.DarkGoldenrod);
 
 
     }

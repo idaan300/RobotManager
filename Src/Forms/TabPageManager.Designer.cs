@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RobotMananager;
+namespace RobotMananager {
 
-public class Utillity {
-
-
+    public partial class MainWindow : Form {
 
 
-
-
+    }
 }
+

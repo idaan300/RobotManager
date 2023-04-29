@@ -1,4 +1,6 @@
-﻿namespace RobotMananager {
+﻿using RobotMananager.CustomControls;
+
+namespace RobotMananager {
     partial class MainWindow {
 
         private System.ComponentModel.IContainer components = null;
@@ -33,23 +35,23 @@
             Btn_Server_StopServer = new Button();
             Btn_Server_StartServer = new Button();
             TPage_Manager = new TabPage();
-            playfieldOverview1 = new CustomControls.PlayfieldOverview();
-            panel2 = new Panel();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
+            PFOV_Main = new PlayfieldOverview();
+            Panel_Manager_Controls = new Panel();
+            GBox_Manager_Entities = new GroupBox();
+            LBox_Entities = new ListBox();
+            GBox_Manager_RobotControls = new GroupBox();
+            Nud_ObjX = new NumericUpDown();
+            Desc_ObjY = new Label();
+            Nud_ObjY = new NumericUpDown();
+            Desc_ObjX = new Label();
+            Btn_Manager_CreateObject = new Button();
+            Btn_Manager_GotoLoc = new Button();
+            Desc_Target = new Label();
+            Nud_LocX = new NumericUpDown();
+            Desc_LocY = new Label();
             comboBox1 = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            numericUpDown3 = new NumericUpDown();
-            label4 = new Label();
-            numericUpDown4 = new NumericUpDown();
-            label5 = new Label();
-            groupBox2 = new GroupBox();
-            listBox1 = new ListBox();
+            Nud_LocY = new NumericUpDown();
+            Desc_LocX = new Label();
             TControl_Main.SuspendLayout();
             TPage_Server.SuspendLayout();
             Panl_LoggerContainer.SuspendLayout();
@@ -60,13 +62,13 @@
             ((System.ComponentModel.ISupportInitialize)Nud_Server_Port).BeginInit();
             GBox_ServerOptions.SuspendLayout();
             TPage_Manager.SuspendLayout();
-            panel2.SuspendLayout();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
-            groupBox2.SuspendLayout();
+            Panel_Manager_Controls.SuspendLayout();
+            GBox_Manager_Entities.SuspendLayout();
+            GBox_Manager_RobotControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Nud_ObjX).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_ObjY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_LocX).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_LocY).BeginInit();
             SuspendLayout();
             // 
             // TControl_Main
@@ -120,7 +122,6 @@
             Btn_Server_LogClear.Size = new Size(41, 38);
             Btn_Server_LogClear.TabIndex = 0;
             Btn_Server_LogClear.UseVisualStyleBackColor = true;
-            Btn_Server_LogClear.Click += Btn_Server_LogClear_Click;
             // 
             // FCTB_Logger
             // 
@@ -269,8 +270,8 @@
             // 
             // TPage_Manager
             // 
-            TPage_Manager.Controls.Add(playfieldOverview1);
-            TPage_Manager.Controls.Add(panel2);
+            TPage_Manager.Controls.Add(PFOV_Main);
+            TPage_Manager.Controls.Add(Panel_Manager_Controls);
             TPage_Manager.Location = new Point(4, 25);
             TPage_Manager.Name = "TPage_Manager";
             TPage_Manager.Padding = new Padding(3);
@@ -279,54 +280,149 @@
             TPage_Manager.Text = "Manager";
             TPage_Manager.UseVisualStyleBackColor = true;
             // 
-            // playfieldOverview1
+            // PFOV_Main
             // 
-            playfieldOverview1.BorderStyle = BorderStyle.FixedSingle;
-            playfieldOverview1.Dock = DockStyle.Fill;
-            playfieldOverview1.Location = new Point(3, 3);
-            playfieldOverview1.Name = "playfieldOverview1";
-            playfieldOverview1.Size = new Size(579, 470);
-            playfieldOverview1.TabIndex = 2;
+            PFOV_Main.BorderStyle = BorderStyle.FixedSingle;
+            PFOV_Main.Dock = DockStyle.Fill;
+            PFOV_Main.Location = new Point(3, 3);
+            PFOV_Main.Name = "PFOV_Main";
+            PFOV_Main.Size = new Size(579, 470);
+            PFOV_Main.TabIndex = 2;
             // 
-            // panel2
+            // Panel_Manager_Controls
             // 
-            panel2.Controls.Add(groupBox2);
-            panel2.Controls.Add(groupBox1);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(582, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(206, 470);
-            panel2.TabIndex = 1;
+            Panel_Manager_Controls.BackColor = Color.White;
+            Panel_Manager_Controls.Controls.Add(GBox_Manager_Entities);
+            Panel_Manager_Controls.Controls.Add(GBox_Manager_RobotControls);
+            Panel_Manager_Controls.Dock = DockStyle.Right;
+            Panel_Manager_Controls.Location = new Point(582, 3);
+            Panel_Manager_Controls.Name = "Panel_Manager_Controls";
+            Panel_Manager_Controls.Size = new Size(206, 470);
+            Panel_Manager_Controls.TabIndex = 1;
             // 
-            // groupBox1
+            // GBox_Manager_Entities
             // 
-            groupBox1.Controls.Add(numericUpDown3);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(numericUpDown4);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(numericUpDown1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(numericUpDown2);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(6, 274);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(195, 191);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Robot Control";
+            GBox_Manager_Entities.BackColor = Color.White;
+            GBox_Manager_Entities.Controls.Add(LBox_Entities);
+            GBox_Manager_Entities.Location = new Point(6, 3);
+            GBox_Manager_Entities.Name = "GBox_Manager_Entities";
+            GBox_Manager_Entities.Size = new Size(195, 125);
+            GBox_Manager_Entities.TabIndex = 1;
+            GBox_Manager_Entities.TabStop = false;
+            GBox_Manager_Entities.Text = "Entities";
             // 
-            // label1
+            // LBox_Entities
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(13, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 16);
-            label1.TabIndex = 1;
-            label1.Text = "Target:";
+            LBox_Entities.BackColor = Color.White;
+            LBox_Entities.BorderStyle = BorderStyle.None;
+            LBox_Entities.Dock = DockStyle.Fill;
+            LBox_Entities.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LBox_Entities.FormattingEnabled = true;
+            LBox_Entities.ItemHeight = 25;
+            LBox_Entities.Items.AddRange(new Object[] { "Dummy1", "Dummy2", "Dummy3", "Dummy4" });
+            LBox_Entities.Location = new Point(3, 19);
+            LBox_Entities.Name = "LBox_Entities";
+            LBox_Entities.Size = new Size(189, 103);
+            LBox_Entities.TabIndex = 0;
+            // 
+            // GBox_Manager_RobotControls
+            // 
+            GBox_Manager_RobotControls.Controls.Add(Nud_ObjX);
+            GBox_Manager_RobotControls.Controls.Add(Desc_ObjY);
+            GBox_Manager_RobotControls.Controls.Add(Nud_ObjY);
+            GBox_Manager_RobotControls.Controls.Add(Desc_ObjX);
+            GBox_Manager_RobotControls.Controls.Add(Btn_Manager_CreateObject);
+            GBox_Manager_RobotControls.Controls.Add(Btn_Manager_GotoLoc);
+            GBox_Manager_RobotControls.Controls.Add(Desc_Target);
+            GBox_Manager_RobotControls.Controls.Add(Nud_LocX);
+            GBox_Manager_RobotControls.Controls.Add(Desc_LocY);
+            GBox_Manager_RobotControls.Controls.Add(comboBox1);
+            GBox_Manager_RobotControls.Controls.Add(Nud_LocY);
+            GBox_Manager_RobotControls.Controls.Add(Desc_LocX);
+            GBox_Manager_RobotControls.Location = new Point(6, 274);
+            GBox_Manager_RobotControls.Name = "GBox_Manager_RobotControls";
+            GBox_Manager_RobotControls.Size = new Size(195, 191);
+            GBox_Manager_RobotControls.TabIndex = 0;
+            GBox_Manager_RobotControls.TabStop = false;
+            GBox_Manager_RobotControls.Text = "Robot Control";
+            // 
+            // Nud_ObjX
+            // 
+            Nud_ObjX.Location = new Point(132, 127);
+            Nud_ObjX.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
+            Nud_ObjX.Name = "Nud_ObjX";
+            Nud_ObjX.Size = new Size(57, 23);
+            Nud_ObjX.TabIndex = 9;
+            // 
+            // Desc_ObjY
+            // 
+            Desc_ObjY.AutoSize = true;
+            Desc_ObjY.Location = new Point(109, 156);
+            Desc_ObjY.Name = "Desc_ObjY";
+            Desc_ObjY.Size = new Size(17, 16);
+            Desc_ObjY.TabIndex = 12;
+            Desc_ObjY.Text = "Y:";
+            // 
+            // Nud_ObjY
+            // 
+            Nud_ObjY.Location = new Point(132, 156);
+            Nud_ObjY.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
+            Nud_ObjY.Name = "Nud_ObjY";
+            Nud_ObjY.Size = new Size(57, 23);
+            Nud_ObjY.TabIndex = 10;
+            // 
+            // Desc_ObjX
+            // 
+            Desc_ObjX.AutoSize = true;
+            Desc_ObjX.Location = new Point(109, 129);
+            Desc_ObjX.Name = "Desc_ObjX";
+            Desc_ObjX.Size = new Size(17, 16);
+            Desc_ObjX.TabIndex = 11;
+            Desc_ObjX.Text = "X:";
+            // 
+            // Btn_Manager_CreateObject
+            // 
+            Btn_Manager_CreateObject.Location = new Point(10, 127);
+            Btn_Manager_CreateObject.Name = "Btn_Manager_CreateObject";
+            Btn_Manager_CreateObject.Size = new Size(75, 45);
+            Btn_Manager_CreateObject.TabIndex = 8;
+            Btn_Manager_CreateObject.Text = "Create Object";
+            Btn_Manager_CreateObject.UseVisualStyleBackColor = true;
+            // 
+            // Btn_Manager_GotoLoc
+            // 
+            Btn_Manager_GotoLoc.Location = new Point(10, 52);
+            Btn_Manager_GotoLoc.Name = "Btn_Manager_GotoLoc";
+            Btn_Manager_GotoLoc.Size = new Size(75, 45);
+            Btn_Manager_GotoLoc.TabIndex = 7;
+            Btn_Manager_GotoLoc.Text = "Go To Location";
+            Btn_Manager_GotoLoc.UseVisualStyleBackColor = true;
+            // 
+            // Desc_Target
+            // 
+            Desc_Target.AutoSize = true;
+            Desc_Target.Location = new Point(13, 25);
+            Desc_Target.Name = "Desc_Target";
+            Desc_Target.Size = new Size(42, 16);
+            Desc_Target.TabIndex = 1;
+            Desc_Target.Text = "Target:";
+            // 
+            // Nud_LocX
+            // 
+            Nud_LocX.Location = new Point(132, 52);
+            Nud_LocX.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
+            Nud_LocX.Name = "Nud_LocX";
+            Nud_LocX.Size = new Size(57, 23);
+            Nud_LocX.TabIndex = 2;
+            // 
+            // Desc_LocY
+            // 
+            Desc_LocY.AutoSize = true;
+            Desc_LocY.Location = new Point(109, 81);
+            Desc_LocY.Name = "Desc_LocY";
+            Desc_LocY.Size = new Size(17, 16);
+            Desc_LocY.TabIndex = 5;
+            Desc_LocY.Text = "Y:";
             // 
             // comboBox1
             // 
@@ -337,110 +433,22 @@
             comboBox1.Size = new Size(121, 24);
             comboBox1.TabIndex = 0;
             // 
-            // numericUpDown1
+            // Nud_LocY
             // 
-            numericUpDown1.Location = new Point(132, 52);
-            numericUpDown1.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(57, 23);
-            numericUpDown1.TabIndex = 2;
+            Nud_LocY.Location = new Point(132, 81);
+            Nud_LocY.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
+            Nud_LocY.Name = "Nud_LocY";
+            Nud_LocY.Size = new Size(57, 23);
+            Nud_LocY.TabIndex = 3;
             // 
-            // numericUpDown2
+            // Desc_LocX
             // 
-            numericUpDown2.Location = new Point(132, 81);
-            numericUpDown2.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(57, 23);
-            numericUpDown2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(109, 54);
-            label2.Name = "label2";
-            label2.Size = new Size(17, 16);
-            label2.TabIndex = 4;
-            label2.Text = "X:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(109, 81);
-            label3.Name = "label3";
-            label3.Size = new Size(17, 16);
-            label3.TabIndex = 5;
-            label3.Text = "Y:";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(10, 52);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 45);
-            button1.TabIndex = 7;
-            button1.Text = "Go To Location";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(10, 127);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 45);
-            button2.TabIndex = 8;
-            button2.Text = "Create Object";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Location = new Point(132, 127);
-            numericUpDown3.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(57, 23);
-            numericUpDown3.TabIndex = 9;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(109, 156);
-            label4.Name = "label4";
-            label4.Size = new Size(17, 16);
-            label4.TabIndex = 12;
-            label4.Text = "Y:";
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.Location = new Point(132, 156);
-            numericUpDown4.Maximum = new Decimal(new Int32[] { 32, 0, 0, 0 });
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(57, 23);
-            numericUpDown4.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(109, 129);
-            label5.Name = "label5";
-            label5.Size = new Size(17, 16);
-            label5.TabIndex = 11;
-            label5.Text = "X:";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(listBox1);
-            groupBox2.Location = new Point(6, 3);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(195, 125);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Entities";
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 16;
-            listBox1.Location = new Point(38, 22);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(120, 84);
-            listBox1.TabIndex = 0;
+            Desc_LocX.AutoSize = true;
+            Desc_LocX.Location = new Point(109, 54);
+            Desc_LocX.Name = "Desc_LocX";
+            Desc_LocX.Size = new Size(17, 16);
+            Desc_LocX.TabIndex = 4;
+            Desc_LocX.Text = "X:";
             // 
             // MainWindow
             // 
@@ -464,14 +472,14 @@
             ((System.ComponentModel.ISupportInitialize)Nud_Server_Port).EndInit();
             GBox_ServerOptions.ResumeLayout(false);
             TPage_Manager.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
-            groupBox2.ResumeLayout(false);
+            Panel_Manager_Controls.ResumeLayout(false);
+            GBox_Manager_Entities.ResumeLayout(false);
+            GBox_Manager_RobotControls.ResumeLayout(false);
+            GBox_Manager_RobotControls.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Nud_ObjX).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_ObjY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_LocX).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Nud_LocY).EndInit();
             ResumeLayout(false);
         }
 
@@ -493,23 +501,23 @@
         private Button Btn_Server_StopServer;
         private Button Btn_Server_StartServer;
         private TextBox TBox_Server_Address;
-        private Panel panel2;
+        private Panel Panel_Manager_Controls;
         private Button Btn_Server_LogClear;
-        private CustomControls.PlayfieldOverview playfieldOverview1;
-        private GroupBox groupBox1;
-        private Label label1;
+        private PlayfieldOverview PFOV_Main;
+        private GroupBox GBox_Manager_RobotControls;
+        private Label Desc_Target;
         private ComboBox comboBox1;
-        private GroupBox groupBox2;
-        private ListBox listBox1;
-        private NumericUpDown numericUpDown3;
-        private Label label4;
-        private NumericUpDown numericUpDown4;
-        private Label label5;
-        private Button button2;
-        private Button button1;
-        private NumericUpDown numericUpDown1;
-        private Label label3;
-        private NumericUpDown numericUpDown2;
-        private Label label2;
+        private GroupBox GBox_Manager_Entities;
+        private ListBox LBox_Entities;
+        private NumericUpDown Nud_ObjX;
+        private Label Desc_ObjY;
+        private NumericUpDown Nud_ObjY;
+        private Label Desc_ObjX;
+        private Button Btn_Manager_CreateObject;
+        private Button Btn_Manager_GotoLoc;
+        private NumericUpDown Nud_LocX;
+        private Label Desc_LocY;
+        private NumericUpDown Nud_LocY;
+        private Label Desc_LocX;
     }
 }
