@@ -4,9 +4,6 @@
     <Compile Update="Src\CustomControls\PlayfieldOverview.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Src\CustomControls\PlayfieldOverview.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Src\Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -79,7 +79,7 @@ namespace RobotMananager {
             TControl_Main.Location = new Point(0, 0);
             TControl_Main.Name = "TControl_Main";
             TControl_Main.SelectedIndex = 0;
-            TControl_Main.Size = new Size(799, 505);
+            TControl_Main.Size = new Size(799, 597);
             TControl_Main.TabIndex = 0;
             // 
             // TPage_Server
@@ -89,7 +89,7 @@ namespace RobotMananager {
             TPage_Server.Location = new Point(4, 25);
             TPage_Server.Name = "TPage_Server";
             TPage_Server.Padding = new Padding(3);
-            TPage_Server.Size = new Size(791, 476);
+            TPage_Server.Size = new Size(791, 568);
             TPage_Server.TabIndex = 0;
             TPage_Server.Text = "Server";
             TPage_Server.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@ namespace RobotMananager {
             Panl_LoggerContainer.Dock = DockStyle.Fill;
             Panl_LoggerContainer.Location = new Point(3, 118);
             Panl_LoggerContainer.Name = "Panl_LoggerContainer";
-            Panl_LoggerContainer.Size = new Size(785, 355);
+            Panl_LoggerContainer.Size = new Size(785, 447);
             Panl_LoggerContainer.TabIndex = 0;
             // 
             // Panl_LoggerOptions
@@ -111,7 +111,7 @@ namespace RobotMananager {
             Panl_LoggerOptions.Dock = DockStyle.Right;
             Panl_LoggerOptions.Location = new Point(736, 0);
             Panl_LoggerOptions.Name = "Panl_LoggerOptions";
-            Panl_LoggerOptions.Size = new Size(49, 355);
+            Panl_LoggerOptions.Size = new Size(49, 447);
             Panl_LoggerOptions.TabIndex = 0;
             // 
             // Btn_Server_LogClear
@@ -144,7 +144,6 @@ namespace RobotMananager {
             FCTB_Logger.DisabledColor = Color.FromArgb(100, 180, 180, 180);
             FCTB_Logger.Dock = DockStyle.Fill;
             FCTB_Logger.FindForm = null;
-            FCTB_Logger.Font = new Font("Courier New", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FCTB_Logger.GoToForm = null;
             FCTB_Logger.HighlightFoldingIndicator = false;
             FCTB_Logger.Hotkeys = resources.GetString("FCTB_Logger.Hotkeys");
@@ -157,7 +156,7 @@ namespace RobotMananager {
             FCTB_Logger.SelectionColor = Color.FromArgb(60, 0, 0, 255);
             FCTB_Logger.ServiceColors = (FastColoredTextBoxNS.ServiceColors)resources.GetObject("FCTB_Logger.ServiceColors");
             FCTB_Logger.ShowLineNumbers = false;
-            FCTB_Logger.Size = new Size(785, 355);
+            FCTB_Logger.Size = new Size(785, 447);
             FCTB_Logger.TabIndex = 1;
             FCTB_Logger.WordWrap = true;
             FCTB_Logger.Zoom = 100;
@@ -275,18 +274,16 @@ namespace RobotMananager {
             TPage_Manager.Location = new Point(4, 25);
             TPage_Manager.Name = "TPage_Manager";
             TPage_Manager.Padding = new Padding(3);
-            TPage_Manager.Size = new Size(791, 476);
+            TPage_Manager.Size = new Size(791, 568);
             TPage_Manager.TabIndex = 1;
             TPage_Manager.Text = "Manager";
             TPage_Manager.UseVisualStyleBackColor = true;
             // 
             // PFOV_Main
             // 
-            PFOV_Main.BorderStyle = BorderStyle.FixedSingle;
-            PFOV_Main.Dock = DockStyle.Fill;
             PFOV_Main.Location = new Point(3, 3);
             PFOV_Main.Name = "PFOV_Main";
-            PFOV_Main.Size = new Size(579, 470);
+            PFOV_Main.Size = new Size(560, 560);
             PFOV_Main.TabIndex = 2;
             // 
             // Panel_Manager_Controls
@@ -295,9 +292,9 @@ namespace RobotMananager {
             Panel_Manager_Controls.Controls.Add(GBox_Manager_Entities);
             Panel_Manager_Controls.Controls.Add(GBox_Manager_RobotControls);
             Panel_Manager_Controls.Dock = DockStyle.Right;
-            Panel_Manager_Controls.Location = new Point(582, 3);
+            Panel_Manager_Controls.Location = new Point(580, 3);
             Panel_Manager_Controls.Name = "Panel_Manager_Controls";
-            Panel_Manager_Controls.Size = new Size(206, 470);
+            Panel_Manager_Controls.Size = new Size(208, 562);
             Panel_Manager_Controls.TabIndex = 1;
             // 
             // GBox_Manager_Entities
@@ -319,7 +316,7 @@ namespace RobotMananager {
             LBox_Entities.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             LBox_Entities.FormattingEnabled = true;
             LBox_Entities.ItemHeight = 25;
-            LBox_Entities.Items.AddRange(new Object[] { "Dummy1", "Dummy2", "Dummy3", "Dummy4" });
+            LBox_Entities.Items.AddRange(new Object[] { "R1 -> GoTo" });
             LBox_Entities.Location = new Point(3, 19);
             LBox_Entities.Name = "LBox_Entities";
             LBox_Entities.Size = new Size(189, 103);
@@ -454,8 +451,9 @@ namespace RobotMananager {
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 505);
+            ClientSize = new Size(799, 597);
             Controls.Add(TControl_Main);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(815, 545);
             Name = "MainWindow";
