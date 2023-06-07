@@ -7,7 +7,9 @@ namespace RobotMananager {
         public MainWindow() {
             InitializeComponent();
 
-
+            //TCPServer Serv = new TCPServer();
+            //Serv.Start();
+            //Serv.Client();
         }
 
 

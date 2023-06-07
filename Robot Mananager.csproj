@@ -39,7 +39,7 @@
     <Compile Include="Src\Main.cs" />
     <Compile Include="Src\Server\DataStructures.cs" />
 
-    <Compile Include="Src\Server\Server.cs" />
+    <Compile Include="Src\Server\TCPServer.cs" />
     <Compile Include="Src\Forms\MainWindow.cs" />
     
     <Compile Include="Src\Forms\MainWindow.Designer.cs" />

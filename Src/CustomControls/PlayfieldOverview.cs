@@ -43,7 +43,7 @@ public class PlayfieldOverview : Panel {
 
     }
 
-    private static void DrawMap_CheckerBoard(int x, Panel Pnl) {
+    private static void DrawMap_CheckerBoard(int x, Panel Pnl, Graphics G) {
         Brush Brsh = new SolidBrush(Color.DarkCyan);
 
         Point[] BG = new Point[] {
