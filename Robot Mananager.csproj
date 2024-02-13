@@ -16,6 +16,8 @@
     <Copyright>2023</Copyright>
     <PackageIcon>AppIcon.png</PackageIcon>
     <EnableDefaultCompileItems>False</EnableDefaultCompileItems>
+    <AnalysisLevel>none</AnalysisLevel>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -37,6 +39,7 @@
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="Src\CustomControls\PlayfieldOverview.cs" />
     <Compile Include="Src\Main.cs" />
+    <Compile Include="Src\Server\Commands.cs" />
     <Compile Include="Src\Server\DataStructures.cs" />
 
     <Compile Include="Src\Server\TCPServer.cs" />

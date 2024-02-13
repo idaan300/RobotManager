@@ -1,7 +1,7 @@
 
 namespace RobotMananager;
 
-internal static class EntryPoint {
+public static class EntryPoint {
     [STAThread]
     static void Main() {
         ApplicationConfiguration.Initialize();
